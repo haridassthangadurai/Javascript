@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            
+        }
+       .container{
+            width: 35rem;
+            height: 20rem;
+           background-color: aqua;
+           padding: 100px;
+           position: relative;
+           top: 100px;
+           left: 500px; 
+       }
+       .container input{
+        border: 5px solid wheat;
+        margin: 10px;
+        padding: 5px;
+        justify-content: center;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="inp1" name="inp1" value=""/>
+        <span>*</span>
+        <input type="text" id="inp2" name="inp2" value=""/>
+        <span>=</span>
+        <input type="text" id="inp3" name="inp3" value=""/>
+   
+    <div>
+        <input type="button" id="btn1" name="btn1" value="Check" onclick="check()">
+        <input type="button" id="btn2" name="btn2" value="Resert" onclick="resert()"/><br/>
+
+        <h1>Output</h1>
+        <div id="div1"></div>
+    </div>
+</div>
+    <script>
+        let text1=document.getElementById("inp1");
+        let text2=document.getElementById("inp2");
+        let text3=document.getElementById("inp3");
+        let btnn1=document.getElementById("btn1");
+        let btnn2=document.getElementById("btn2");
+
+        function resert()
+        {
+            let text1=document.getElementById("inp1").value=Math.floor((Math.random()*30));
+            let text2=document.getElementById("inp2").value=Math.floor((Math.random()*30));
+            let text3=document.getElementById("inp3").value="";
+        }
+        function check()
+        {
+        let text1=document.getElementById("inp1").value;
+        let text2=document.getElementById("inp2").value;
+        let text3=document.getElementById("inp3").value; 
+        let divv=document.getElementById("div1");
+
+        let first=parseInt(text1);
+        let second=parseInt(text2);
+        let total=first*second;
+        if(text3 == total)
+        {
+        divv.innerHTML="WOw nice keep rocking";
+        divv.style.color="green";
+         divv.style.fontWeight="bold";
+      }
+      else{
+        divv.innerHTML="Better luck next time";
+        divv.style.color="red";
+        divv.style.fontWeight="bold";
+      }
+        }
+    </script>
+</body>
+</html>

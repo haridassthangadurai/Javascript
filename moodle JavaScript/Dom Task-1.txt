@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moodle</title>
+</head>
+<body>
+    <p id ="parag">It is the entry point of the DOM. For accessing any HTML Element, you should always start with accessing the document object first.</p>
+ <div>
+<button>click</button>
+ </div>
+
+
+
+
+ <script>
+    var pa=document.getElementById("parag");
+       pa.style.color="red";
+       pa.style.fontSize="19px";
+ </script>
+</body>
+</html>

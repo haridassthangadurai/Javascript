@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date1</title>
+</head>
+<body>
+    <input type="date" id="txt" value=""/>
+    <input type="button" id="btn" value="click" onclick="dass()"/>
+    <script>
+        function dass(){
+            var txt1=document.getElementById("txt").value;
+            var now=new Date(txt1);
+            alert(now);
+            var myD=now.getDate();
+            var myM=now.getMonth()+1;
+            var myY=now.getFullYear();
+            alert(myD+"*"+myM+"*"+myY);
+            alert(myD+"-"+myM+"-"+myY);
+        }
+    </script>
+    
+</body>
+</html>

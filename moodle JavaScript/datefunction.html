@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <input type="date" id="today" name="name"  value=""/>
+    <input type="button" id="btn" name="name" value="incress 5" onclick="d()"/>
+    <div id="divid">
+
+    </div>
+    <script>
+    function d(){
+    
+    const en=document.getElementById("today").value;
+     var dat=new Date(en)
+      date= dat.setDate(dat.getDate()+5);
+      alert(dat);
+      document.getElementById("divid").innerHTML="After 5 days "+dat; 
+      date= dat.setDate(dat.getDate() -10 );
+      alert(dat);
+      document.getElementById("divid").innerHTML="before 5 days "+dat;  
+      
+       
+
+    
+     
+           
+}
+    
+    </script>
+</body>
+</html>

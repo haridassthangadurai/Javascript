@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="submit()">
+        <div>
+    <input type="text" id="ename" name="ename" value="" placeholder="Enter a name" onkeyup="name1()"/>
+    <span id="sp1">No strength :</span><br/>
+    <input type="text" id="empid" name="empid" value="" placeholder="employeeid" onkeyup="emppid()" />
+    <span id="sp2"> Null </span><br/>
+    <input type="text" id="desi" name="desi" value="" placeholder="designation" onkeyup="des()" />
+    <span id="sp3"> No value</span><br/>
+    <input type="text" id="basic" name="basic" value="" placeholder="Basic pay" onkeyup="sal()"/><br/>
+    
+    <input type="text" id="hra" name="hra" value="" placeholder="hra" /><br/>
+    
+    <input type="text" id="da" name="da" value="" placeholder="da" /><br/>
+    
+    <input type="text" id="pf" name="pf" value="" placeholder="pf"/><br/>
+    
+    <input type="text" id="ntpay" name="ntpay" value="" placeholder="net pay"/><br/>
+    
+    <input type="text" id="grpay" name="grpay" value="" placeholder="gross pay"/><br/>
+    
+    <input type="button" value="submit" id="btn" name="btn"/>
+</div>
+<div id="divid">
+
+</div>
+
+</form>
+    <script>
+        function name1()
+        {
+        let ename=document.getElementById("ename").value;
+        let sp1=document.getElementById("sp1");
+        let i;
+        if(ename.length>3)
+        {
+            i="good";
+          
+        }
+        else{
+            i="bad"
+           
+
+        }
+        sp1.innerHTML=i;
+    }
+    function emppid()
+    {
+        let empid=document.getElementById("empid").value;
+        let sp2=document.getElementById("sp2");
+        let temp;
+        if(empid !="")
+        {
+            temp="good";
+        }
+        else{
+            temp="bad";
+        }
+        sp2.innerHTML=temp;
+    }
+    function des()
+    {
+        let role=document.getElementById("desi").value;
+        let sp3=document.getElementById("sp3");
+        let temp1;
+        if(role !="")
+        {
+            temp1="good";
+        }
+        else{
+            temp1="bad";
+        }
+        sp3.innerHTML=temp1;
+    }
+     function sal(){
+        let basic=document.getElementById("basic").value;
+     let hra=document.getElementById("hra").value=basic*(15/100);
+     let da=document.getElementById("da").value=basic*(10/100);
+     let pf=document.getElementById("pf").value=basic*(5/100);
+     basic=parseInt(basic);
+    hra=parseInt(hra);
+    da=parseInt(da);
+    pf=parseInt(pf);
+     let netpay=document.getElementById("ntpay").value=(basic+hra+da);
+    let grosspay=document.getElementById("grpay").value=(netpay+pf);
+     }
+     function submit()
+{
+    let ename=document.getElementById("ename").value;
+    let empid=document.getElementById("empid").value;
+    let role =document.getElementById("desi").value;
+    let basic=document.getElementById("basic").value;
+    let hra=document.getElementById("hra").value;
+    let da=document.getElementById("da").value;
+    let pf=document.getElementById("pf").value;
+    let netpay =document.getElementById("ntpay").value;
+    let btnn=document.getElementById("btn");
+
+
+    let grosspay =document.getElementById("grpay").value;
+
+    let div=document.getElementById("divid");
+
+    div.innerHTML="Employee Name :"+ename+'<br>'+'Employee id'+empid+'<br>'+"Employee Role"+role+'<br>'+"Basic Pay"+basic+'<br>'+"HRA"+hra+'<br>'+"DA"+da+'<br>'+'PF'+pf+'<br>'+"Net pay"+netpay+'<br>'+"grosspay"+grosspay;
+   
+
+}
+
+
+    </script>
+
+    
+</body>
+</html>

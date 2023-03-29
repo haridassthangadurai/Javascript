@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HARI STORE</h1>
+    <label>product_name</label><br>
+    <input type="text" id="pro_name" name="pro_name" value="" placeholder="Enter your product name"/><br>
+    <label>product_Qty</label><br>
+    <input type="text" id="pro_Qty" name="pro_Qty" value="" placeholder=""/><br>
+    <label>product_Rate</label><br>
+    <input type="text" id="pro_rate" name="pro_rate" value="" placeholder=""/><br>
+    <input type="button" id="remove" name="remove" value="ADD" onclick="additem()"/>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>product_name</th>
+                <th>product_Qty</th>
+                <th>product_Rate</th>
+                <th>product_Amount</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="product_1">
+
+        </tbody>
+    </table>
+    <script>
+        var item=[];
+        var proamt;
+        var proname=document.getElementById("pro_name");
+        var proqty=document.getElementById("pro_Qty");
+        var prorate=document.getElementById("pro_rate");
+        function additem()
+        {
+        
+            var proname=document.getElementById("pro_name").value;
+            item.push(proname);
+            document.getElementById("pro_name").value="";
+    
+            var proqty=document.getElementById("pro_Qty").value;
+            item.push(proqty);
+            document.getElementById("pro_Qty").value="";
+             var prorate=document.getElementById("pro_rate").value;
+            item.push(prorate);
+            document.getElementById("pro_rate").value="";
+            
+           item.push(proamt);
+            proamt=proqty*prorate;
+            getdata();
+           
+
+        }
+        function getdata()
+        {
+            var string="";
+            var sno=0;
+            item.forEach(function(value,index){
+                sno+=1;
+                string+='<tr><td>'+sno+'</td><td>'+value+'</td><td>'+value+'</td><td>'+value+'</td><td>'
+                    +proamt+'</td><td><a onclick="remove('+index+')">Remove</a></td></tr>';
+
+            })
+            document.getElementById("product_1").innerHTML=string;
+}
+function remove(id)
+{
+    item.splice(id,4);
+    getdata();
+}
+
+    </script>
+
+
+</body>
+</html>

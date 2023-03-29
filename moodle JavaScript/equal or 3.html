@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal or</title>
+</head>
+<body>
+    <input type="text" id="txt" name="txt" value=""/><br>
+    <input type="text" id="txt1" name="txt1" value=""/><br>
+
+
+    <input type="button" id="btn" name="btn" value="Click" onclick="equal()"/>
+    <script>
+        function equal()
+        {
+        let alpha=document.getElementById("txt").value;
+        let bita=document.getElementById("txt1").value;
+
+        if(alpha==bita)
+        {
+           alert("Data are Equal");
+        }
+        else
+        {
+            alert("Not Equal");
+        }
+    }
+    </script>
+</body>
+</html>
